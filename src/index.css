@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-grass: var(--grass);
+  --color-diamond: var(--diamond);
+  --color-gold: var(--gold);
+  --color-lava: var(--lava);
+  --color-emerald: var(--emerald);
+  --color-obsidian: var(--obsidian);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.12 0.01 250);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.65 0.18 148);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.15 0.01 250);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.18 0.005 250);
+  --muted-foreground: oklch(0.6 0.01 250);
+  --accent: oklch(0.65 0.18 210);
+  --accent-foreground: oklch(0.08 0 0);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.97 0 0);
+  --border: oklch(0.22 0.01 250);
+  --input: oklch(0.18 0.01 250);
+  --ring: oklch(0.65 0.18 148);
+  --grass: #57C84D;
+  --diamond: #45C4FF;
+  --gold: #FFC83D;
+  --lava: #FF6B1A;
+  --emerald: #00D08A;
+  --obsidian: #1a1a2e;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'VT323', 'Courier New', monospace;
+    overflow-x: hidden;
+    background-color: #111111;
+  }
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #57C84D; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #45C4FF; }
+
+/* ===================== FONTS ===================== */
+.font-minecraft { font-family: 'Press Start 2P', monospace; }
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.font-vt323 { font-family: 'VT323', monospace; }
+.font-inter { font-family: 'Inter', sans-serif; }
+
+/* ===================== TEXT GLOWS ===================== */
+.text-glow-grass { text-shadow: 0 0 10px #57C84D, 0 0 20px #57C84D, 0 0 40px #57C84D; }
+.text-glow-diamond { text-shadow: 0 0 10px #45C4FF, 0 0 20px #45C4FF, 0 0 40px #45C4FF; }
+.text-glow-gold { text-shadow: 0 0 10px #FFC83D, 0 0 20px #FFC83D, 0 0 40px #FFC83D; }
+.border-glow-grass { box-shadow: 0 0 10px #57C84D, inset 0 0 10px rgba(87,200,77,0.1); }
+.border-glow-diamond { box-shadow: 0 0 10px #45C4FF, inset 0 0 10px rgba(69,196,255,0.1); }
+.border-glow-gold { box-shadow: 0 0 10px #FFC83D, inset 0 0 10px rgba(255,200,61,0.1); }
+
+/* ===================== GLASS ===================== */
+.glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+.glass-grass { background: rgba(87,200,77,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(87,200,77,0.2); }
+.glass-diamond { background: rgba(69,196,255,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(69,196,255,0.2); }
+.glass-gold { background: rgba(255,200,61,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,200,61,0.2); }
+
+/* ===================== NEON ===================== */
+.neon-grass { color: #57C84D; text-shadow: 0 0 7px #57C84D, 0 0 10px #57C84D, 0 0 21px #57C84D; }
+.neon-diamond { color: #45C4FF; text-shadow: 0 0 7px #45C4FF, 0 0 10px #45C4FF, 0 0 21px #45C4FF; }
+.neon-gold { color: #FFC83D; text-shadow: 0 0 7px #FFC83D, 0 0 10px #FFC83D, 0 0 21px #FFC83D; }
+
+/* ===================== PATTERNS ===================== */
+.grid-pattern {
+  background-image: linear-gradient(rgba(87,200,77,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(87,200,77,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.dot-matrix {
+  background-image: radial-gradient(circle, rgba(87,200,77,0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.voxel-pattern {
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px, 4px 4px, 4px 4px;
+}
+.mesh-gradient {
+  background-image: radial-gradient(at 27% 37%, rgba(87,200,77,0.08) 0px, transparent 50%), radial-gradient(at 97% 21%, rgba(69,196,255,0.08) 0px, transparent 50%), radial-gradient(at 52% 99%, rgba(255,200,61,0.06) 0px, transparent 50%), radial-gradient(at 10% 29%, rgba(87,200,77,0.05) 0px, transparent 50%), radial-gradient(at 97% 96%, rgba(69,196,255,0.06) 0px, transparent 50%);
+}
+.pixelated { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-slow { animation: float 5s ease-in-out infinite; }
+.animate-float-fast { animation: float 2s ease-in-out infinite; }
+
+@keyframes pulseGlow { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+@keyframes torchFlicker { 0%, 100% { opacity: 1; filter: brightness(1); } 25% { opacity: 0.85; filter: brightness(0.9); } 50% { opacity: 0.95; filter: brightness(1.1); } 75% { opacity: 0.8; filter: brightness(0.85); } }
+.animate-flicker { animation: torchFlicker 0.15s ease-in-out infinite; }
+
+@keyframes redstoneFlicker { 0%, 100% { background-color: #FF4444; box-shadow: 0 0 8px #FF4444; } 50% { background-color: #FF6666; box-shadow: 0 0 16px #FF6666; } }
+.animate-redstone { animation: redstoneFlicker 0.5s ease-in-out infinite; }
+
+@keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
+@keyframes drift { 0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) translateX(20px) rotate(360deg); opacity: 0; } }
+
+@keyframes rainbowShift { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
+
+/* ===================== PROGRESS BARS ===================== */
+.mc-progress { background: #1a1a1a; border: 2px solid #555; box-shadow: inset 0 2px 4px rgba(0,0,0,0.8); }
+.mc-progress-fill { background: linear-gradient(90deg, #57C84D, #7EF063); box-shadow: 0 0 10px #57C84D; image-rendering: pixelated; }
+
+/* ===================== MINECRAFT BUTTONS ===================== */
+.btn-minecraft {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(180deg, #555 0%, #333 100%);
+  border: 2px solid #666;
+  box-shadow: inset -2px -2px 0 #1a1a1a, inset 2px 2px 0 #888, 0 4px 0 #000;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.1s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-minecraft:hover { background: linear-gradient(180deg, #666 0%, #444 100%); top: 1px; box-shadow: inset -2px -2px 0 #1a1a1a, inset 2px 2px 0 #888, 0 3px 0 #000; }
+.btn-minecraft:active { top: 4px; box-shadow: inset -2px -2px 0 #1a1a1a, inset 2px 2px 0 #888, 0 0 0 #000; }
+.btn-green { background: linear-gradient(180deg, #4a9e3f 0%, #2d6e25 100%); border-color: #57C84D; box-shadow: inset -2px -2px 0 #1a3d15, inset 2px 2px 0 #6ed862, 0 4px 0 #000, 0 0 20px rgba(87,200,77,0.4); }
+.btn-green:hover { background: linear-gradient(180deg, #5bb84e 0%, #3d8033 100%); box-shadow: inset -2px -2px 0 #1a3d15, inset 2px 2px 0 #6ed862, 0 3px 0 #000, 0 0 30px rgba(87,200,77,0.6); }
+.btn-diamond { background: linear-gradient(180deg, #2a7a9e 0%, #1a5070 100%); border-color: #45C4FF; box-shadow: inset -2px -2px 0 #0d2a3d, inset 2px 2px 0 #5dd4ff, 0 4px 0 #000, 0 0 20px rgba(69,196,255,0.4); }
+.btn-gold { background: linear-gradient(180deg, #9e7a1a 0%, #6e5010 100%); border-color: #FFC83D; box-shadow: inset -2px -2px 0 #3d2a05, inset 2px 2px 0 #ffd865, 0 4px 0 #000, 0 0 20px rgba(255,200,61,0.4); }
+
+/* ===================== SCROLL HIDE ===================== */
+.scroll-hide::-webkit-scrollbar { display: none; }
+.scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===================== COMMAND INPUT ===================== */
+.command-input {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid #57C84D;
+  color: #57C84D;
+  padding: 8px 16px;
+}
